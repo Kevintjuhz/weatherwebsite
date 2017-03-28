@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Home Page */
+
+body {
+    background-image: url('clouds.jpg');
+    background-repeat: no-repeat;
+}
+
+div#container {
+    width: 960px;
+    margin: 0px auto 0px;
+    background: white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+hr.divide {
+    border: solid 1px #ccc;
+}
+
+/* Navigation Section */
+
+nav {
+    width: 100%;
+    background: #343434;
+    padding: 15px 0px;
+}
+
+nav#header ul li  {
+    display: inline;
+}
+
+nav#header ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 20px 10px 20px 20px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+nav#header ul li a.active {
+    text-decoration: underline;
+}
+
+
+div#header-image h1 {
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 182px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 35px;
+}
+
+/* About Section */
+
+div#about-section {
+    padding: 20px 30px;
+    background-color: white;
+}
+
+div#about-section h1, div#about-section p {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 10px 0px;
+}
+
+div#about-section hr {
+    width: 100%;
+    border: solid 1px #ccc;
+}
+
+/* Subscribe Section */
+
+#sub-section {
+    background-color: #343434;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+div#sub-section h3, 
+div#sub-section button {
+    display: inline;
+    margin-left: 30px;
+    color: white;
+}
+
+div#sub-section {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+div#sub-section button {
+    float: right;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px 10px;
+    margin: -6px 100px;
+    text-align: center;
+    background-color: #5a5a5a;
+    border-style: none;
+}
+
+div#sub-section button:hover {
+    background-color: #7c7c7c;
+}
+
+/* Services Section */
+
+div#services-section {
+    padding: 20px 30px;
+    background-color: white;
+}
+
+div#services-section h1, div#services-section p {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 10px 0px;
+}
+
+div#services-section hr {
+    width: 100%;
+    border: solid 1px #ccc;
+}
+
+/* Contact Section */
+
+div#contact-section {
+    padding-top: 20px;
+    margin: 0px 30px;
+    padding-bottom: 20px;
+}
+
+div#contact-section h2 {
+    margin: 0px 0px 10px;
+}
+
+
+div#contact-section p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+div#contact-section input,
+div#contact-section textarea {
+    margin: 10px 0px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+div#contact-section input[type=text] {
+    padding: 10px;
+    width: 500px;
+    border: solid 1px #7c7c7c;
+}
+
+div#contact-section input[type=email] {
+    padding: 10px ;
+    width: 500px;
+    border: solid 1px #7c7c7c;
+}
+
+div#contact-section input[type=submit] {
+    padding: 10px;
+    width: 525px;
+    border: solid 1px #7c7c7c;
+    border-style: none;
+    background-color: #5a5a5a;
+    color: white;
+    border-radius: 5px;
+}
+
+div#contact-section input[type=submit]:hover {
+    border-style: none;
+    background-color: #7c7c7c;
+}
+
+div#contact-section textarea {
+    width: 500px;
+    padding: 5px 10px;
+    resize: none;
+}
+
+/* Footer */
+
+footer nav ul li a:link,
+footer nav ul li a:visited {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #eee;
+    position: absolute;
+    width: 960px;
+}
+
+footer nav {
+   padding: 16px 0px; 
+}
+
+footer nav ul li {
+    display: inline;
+}
+
+footer nav ul {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+footer nav ul.right-links {
+    float: right;
+    text-align: right;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav.clearfix {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+/* Live Weather Page */
+
+div#content {
+    padding: 10px 20px;
+}
+
+div#live-weather {
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+div#live-weather div.data-line p {
+    display: inline;
+}
+
+div#live-weather h3 {
+    margin: 10px 0px 4px;
+}
+
+div#live-weather div.data-line {
+    margin: 1px 0px 2px;
+}
+
+div#live-weather div.data-line p.data {
+    position: absolute;;
+    left: 300px;
+}
+ 
+div#live-weather hr {
+    margin-top: 5px;
+}
+
+div#live-weather h3 {
+    font-size: 18px;
+}
+
+
+
+div#header-image {
+    background-image: url('weather-home.jpg');
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+

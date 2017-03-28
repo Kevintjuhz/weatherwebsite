@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather forcast app</title> 
+    
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+    
+    <!--[if IE]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->  
+    
+    
+    </head>
+    <body>   
+        <div id="container">
+            <nav id="header">
+                <ul>
+                    <li><a href="app.html">Home</a></li>
+                    <li><a href="live.html" class="active">Live Weather</a></li>
+                    <li><a href="forecast.html">Weather Forecast</a></li>
+                </ul>
+            </nav>
+        
+            <div id="header-image">
+                <h1>Your website in weather forecast!</h1>
+            </div>
+            
+            <div id="content">
+                <div id="info">
+                <h2>Live Weather</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sapien nulla, fermentum sit amet enim varius, mattis congue massa. Curabitur a orci a elit aliquam interdum. Sed mi purus, blandit et tempor ut, semper sit amet mi. Cras eget dolor a felis fermentum consequat sit amet quis nisi. Praesent euismod facilisis lacinia.</p>
+                </div>
+                
+                <div id="live-weather">
+                    
+                    <h3>Position:</h3>
+                    <div class="data-line">
+                        <p>City:</p> 
+                        <p class="data" id="city">Data</p>
+                    </div>
+                    <div class="data-line">
+                        <p>Coords:</p> 
+                        <p class="data" id="coords">Data</p>
+                    </div>
+                    <hr>
+                    <h3>Weather</h3>
+                    <div class="data-line">
+                        <p>Weather Type:</p> 
+                        <p class="data" id="weather-type">Data</p>
+                    </div>
+                    
+                    <div class="data-line">
+                        <p>Description:</p> 
+                        <p class="data" id="weather-description">Data</p>
+                    </div>
+                    <hr>
+                    <h3>Temp</h3>
+                    <div class="data-line">
+                        <p><a>Kelvin:</a></p> 
+                        <p class="data" id="temp">Data</p>
+                    </div>
+                    
+                    <div class="data-line">
+                        <p><a>Pressure:</a></p> 
+                        <p class="data" id="pressure">Data</p>
+                    </div>
+                    
+                    <div class="data-line">
+                        <p><a>Humidity:</a></p> 
+                        <p class="data" id="humidity">Data</p>
+                    </div>
+                    <hr>
+                    <h3>Wind</h3>
+                    <div class="data-line">
+                        <p><a>Wind Speed:</a></p> 
+                        <p class="data" id="speed">Data</p>
+                    </div>
+                    
+                    <div class="data-line">
+                        <p><a>Degrees:</a></p> 
+                        <p class="data" id="deg">Data</p>
+                    </div>
+                    <hr>
+                    <h3>Country</h3>
+                    <div class="data-line">
+                        <p><a>Country:</a></p> 
+                        <p class="data" id="country">Data</p>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+      
+            var data;
+            $(document).ready(function(){
+                    
+
+                    var long;
+                    var lat;
+                
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            
+                        long = position.coords.longitude;
+                        lat = position.coords.latitude;
+                            
+                        $('#coords').html("latitude: " + lat + "    longitude: " + long)
+                            
+                        var api = 'http://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&appid=bddca3231c6d21da300e504fd4d5f3fd';
+                        
+                            
+                        $.getJSON(api, function(data){
+                            
+                            var city = data.name;
+                            var windSpeed = data.wind.speed;
+                            var weatherMain;
+                            var weatherDesc;
+                            var mainTemp = data.main.temp;
+                            var mainPressure = data.main.pressure;
+                            var mainHumidity = data.main.humidity;
+                            var windDeg = data.wind.deg;
+                            var country = data.sys.country;
+                            var longitude = data.coord.lon;
+                            var latitude = data.coord.lat;
+                            var i;
+                            
+                            for (i = 0; i < data.weather.length; i++) {
+                                console.log(data.weather[i])
+                                weatherMain = data.weather[i].main +' ';
+                            }
+                            
+                            for (i = 0; i < data.weather.length; i++) {
+                                console.log(data.weather[i])
+                                weatherDesc = data.weather[i].description;
+                            }
+                            
+                            $('#city').html(city)
+                            $('#weather-type').html(weatherMain)
+                            $('#weather-description').html(weatherDesc)
+                            $('#temp').html(mainTemp)
+                            $('#pressure').html(mainPressure + ' hpa')
+                            $('#humidity').html(mainHumidity + '%')
+                            $('#deg').html(windDeg)
+                            $('#speed').html(windSpeed)
+                            $('#country').html(country)
+                            $('#coords').html("latitude: " + latitude + "  longitude: " + longitude)
+                            
+                            console.log(weatherMain);
+                            console.log(weatherDesc);
+                            console.log(city);
+                            console.log(api);
+                            console.log(data);
+                        });
+                            
+                        
+                        
+                    });
+                        
+                }
+                
+            });
+        </script>    
+    </body>
+
+    </html>
