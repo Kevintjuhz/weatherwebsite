@@ -9,7 +9,7 @@
 
     
     <!--[if IE]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->  
     
     
@@ -113,7 +113,7 @@
                             
                         $('#coords').html("latitude: " + lat + "    longitude: " + long)
                             
-                        var api = 'http://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&appid=bddca3231c6d21da300e504fd4d5f3fd';
+                        var api = 'https://api.openweathermap.org/data/2.5/weather?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&appid=bddca3231c6d21da300e504fd4d5f3fd';
                         
                             
                         $.getJSON(api, function(data){
